@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ansi</title>
+    <link rel="stylesheet" href="./ansi/style.css">
+    <link rel="stylesheet" href="./global.css">
+</head>
+<body>
+    <header>
+        <div class="rights">
+            <span>Livio Ardoin 🇫🇷</span>
+            <div class="liens">
+                <a href="./">Home</a>
+                <a href="./unicode" class="uni">Unicode</a>
+            </div>
+        </div>
+        <h2>
+            Il existe un moyen de <span>personnaliser</span> 
+            la couleur de vos chaines de caractères 🥝
+        </h2>
+        <a href="#ansi">
+            <svg viewBox="0 0 24 24" width="96" height="96">
+                <path
+                    d="M19,11H9l3.29-3.29a1,1,0,0,0,0-1.42,1,1,0,0,0-1.41,0l-4.29,4.3A2,2,0,0,0,6,12H6a2,2,0,0,0,.59,1.4l4.29,4.3a1,1,0,1,0,1.41-1.42L9,13H19a1,1,0,0,0,0-2Z" />
+            </svg>
+        </a>
+    </header>
+    <section id="ansi">
+        <h1>ANSI escape code</h1>
+        <p>Un standart souvent compris dans <span>les terminaux</span></p>
+        <div class="side">
+            <div class="code">
+                <span class="fn">print</span>(<span class="str">"<span class="underline">\033[1m</span>Hello<span class="reset">\033[0m</span>, <span class="cyan">\033[0;36m</span>World!<span class="reset">\033[0m</span>"</span>)
+            </div>
+            <pre class="explication">       └<span class="underline">Souligné</span>     │          │
+                     └<span class="reset">Remise à 0</span>│
+                                └<span class="cyan">Cyan</span></pre>
+            <h3>Résultat:</h3>
+            <pre class="result"><span class="underline">Hello</span>, <span class="cyan">World!</span></pre>
+        </div>
+    </section>
+</body>
+</html>

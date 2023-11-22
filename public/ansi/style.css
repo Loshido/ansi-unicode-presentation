@@ -1,0 +1,184 @@
+:root{
+    --pad: 20%;
+}
+
+header{
+    padding: 50px var(--pad);
+    min-height: 100svh;
+    position: relative;
+}
+
+div.rights > div.liens > a.uni{background-color: #5A4EF8;}
+
+header > h2{
+    font-size: 5em;
+    text-transform: uppercase;
+    line-height: 125%;
+}
+
+header > h2 > span{
+    background: linear-gradient(90deg, 
+        #41b866 0%, 
+        #41b86680 100%);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+header > a{
+    position: absolute;
+    padding: 48px;
+    bottom: 50px;
+    left: calc(50% - 96px);
+    transform: rotate(-90deg);
+    animation: ding-ding 2s ease infinite;
+    cursor: pointer;
+}
+
+header > a::after{
+    content: "";
+    
+    z-index: -5;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 48px;
+    left: 48px;
+
+    background-color: #41b86640;
+    border-radius: 50%;
+    animation: popup 2s ease infinite;
+    animation-delay: 1s;
+}
+
+@keyframes ding-ding {
+    0%{bottom: 50px}
+    50%{bottom: 75px}
+    100%{bottom: 50px}
+}
+
+@keyframes popup {
+    0%{
+        opacity: 0;
+        transform: scale(0);
+    }
+    50%{
+        opacity: 1;
+        transform: scale(1);
+    }
+    100%{
+        opacity: 0;
+        transform: scale(0);
+    }
+}
+
+section{
+    padding: 50px var(--pad);
+    min-height: 100vh;
+}
+
+section > h1{
+    font-size: 5em;
+}
+section > p{
+    font-size: 2em;
+}
+section > p > span{
+    padding: 5px;
+    margin: -5px;
+    background-color: black;
+    color: #fff;
+}
+
+section > p > span::after{
+    content: "";
+    animation: points 4s step-end infinite;
+}
+
+@keyframes points {
+    0%{content: ".";}
+    33%{content: "..";}
+    66%{content: "...";}
+}
+
+section > div.side{
+    margin: 50px 0;
+    border-radius: 5px;
+    padding: 25px;
+    
+    background-color: #00000010;
+}
+
+section > div.side > :is(pre,div){
+    line-height: 125%;
+    font-size: 2em;
+}
+
+div.code span.fn{color: #5865F2;}
+div.code span.str{color: #0e9b3a;}
+div.side .underline{
+    color: #EB459E;
+    background: transparent;
+    transition: background .25s ease-in-out;
+}
+div.side .reset{
+    color: #ED4245;
+    background: transparent;
+    transition: background .25s ease-in-out;
+}
+div.side .cyan{
+    color: #42bced;
+    background: transparent;
+    transition: background .25s ease-in-out;
+}
+
+div.side > h3{
+    font-size: 1em;
+    font-weight: 400;
+}
+div.side > pre.result{
+    font-size: 4em;
+    font-weight: 400;
+}
+
+div.side > pre.result > span.underline{
+    color: black;
+    text-decoration: underline;
+}
+
+div.side:has(.underline:hover) .underline,
+div.side:has(.cyan:hover) .cyan,
+div.side:has(.reset:hover) .reset{
+    background-color: #ffffff;
+    padding: 5px;
+    margin: -5px;
+}
+
+@media (width < 1400px) {
+    :root{
+        --pad: 5%;
+    }
+    header > h2{
+        margin-top: 25px;
+        font-size: 3em;
+    }
+    section > h1{font-size: 3em;}
+    section > p{
+        font-size: 1.5em;
+    }
+    section > div.side > :is(pre,div){
+        font-size: 1.2em;
+    }
+}
+@media (width < 600px) {
+    section > div.side{
+        padding: 15px;
+    }
+    section > div.side > :is(pre,div){
+        font-size: .9em;
+    }
+    header > h2{
+        margin-top: 25px;
+        font-size: 3em;
+    }
+}

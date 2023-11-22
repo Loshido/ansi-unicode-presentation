@@ -1,0 +1,24 @@
+@font-face {
+    font-family: "Worksans";
+    src: url(../WorkSans.ttf);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "Worksans";
+}
+
+div.rights {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+div.rights > div.liens > a{
+    padding: 8px;
+    background-color: #2a2a2a;
+    color: #fff;
+    text-decoration: none;
+}
